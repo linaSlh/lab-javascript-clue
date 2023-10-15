@@ -2,7 +2,8 @@
 //create a code that extracts randomly elemnts of objects inside arrays and implement a new array that stores these elemnts
 
 // ITERATION 1
-
+//create an array of arrays that contains three arrays: suspects , weapons ,rooms
+//select randomlythe three items at once (arrayOfArrays)
 // Suspects Array
 
 const suspectsArray = [ {
@@ -76,72 +77,66 @@ const suspectsArray = [ {
 ]
 // Rooms Array
 
-const roomsArray = [
-    {name: rope , weight: 10}
-    {name: knife , weight: 8}
-    {name: candlestick , weight: 2}
-    {name: dumbbell , weight: 30}
-    {name: poison ,weight: 2}
-    {name: axe , weight: 15}
-    {name: bat , weight: 13}
-    {name: trophy , weight: 25}
-    {name: pistol , weight: 20}
+const weaponsArray = [
+    {name: "rope" , weight: 10},
+    {name: "knife" , weight: 8},
+    {name: "candlestick" , weight: 2},
+    {name: "dumbbell" , weight: 30},
+    {name: "poison" ,weight: 2},
+    {name: "axe" , weight: 15},
+    {name: "bat" , weight: 13},
+    {name: "trophy" , weight: 25},
+    {name: "pistol" , weight: 20}
 ]
 
 // Weapons Array
 
-const weaponsArray = [
-//     name: Dining Room,
-//     name: Conservatory,
-//     name: Kitchen,
-//     name: Study,
-//     name: Library,
-//     name: Billiard Room,
-//     name: Lounge,
-//     name: Ballroom,
-//     name: Hall,
-//     name: Spa,
-//     name: Living Room,
-//     name: Observatory,
-//     name: Theater,
-//     name: Guest House,
-//    name: Patio,
+const roomsArray = [
+    {name: "Dining Room"} ,
+    {name: "Conservatory"},
+    {name: "Kitchen"},
+    {name: "Study"},
+    {name: "Library"},
+    {name: "Billiard Room"},
+    {name: "Lounge"},
+    {name:" Ballroom"},
+    {name: "Hall"},
+    {name: "Spa"},
+    {name: "Living Room"},
+    {name: "Observatory"},
+    {name: "Theater"},
+    {name: "Guest House"},
+    {name: "Patio"},
 ];
-
+let arrayOfArrays = [suspectsArray , roomsArray ,weaponsArray]
 
 // ITERATION 2
-
-// // function selectRandom(suspectsArray) {
-//     const randomIndex = Math.floor(Math.random()*suspectsArray.length);
-//     const newArray =[suspectsArray[randomIndex]];
+function selectRandom(arrayOfArrays) {
+    const randomSuspects = suspectsArray[Math.floor(Math.random() * suspectsArray.length)];
+    const randomWeapons = weaponsArray[ Math.floor(Math.random() * weaponsArray.length)];
+    const randomRooms = roomsArray[Math.floor(Math.random() * roomsArray.length)];
+    return [randomRooms,randomSuspects,randomWeapons];
     
-//     return(newArray);
-
-// }
-// console.log(newArray);
-
-
-function selectRandom(suspectsArray) {
-    const randomIndex = Math.floor(Math.random() * suspectsArray.length);
-    const newArray = [suspectsArray[randomIndex]];
-    return newArray;
 }
 
-const newArray = selectRandom(suspectsArray); 
+const newArray = selectRandom(arrayOfArrays); 
 console.log(newArray); 
 
 
 
 
-function pickMystery() {
-    return {
-        suspect:,
-        weapon:,
-        room: 
-}
+// function pickMystery() {
+  
+    function pickMystery() {}
+//        
+    
+       
 
 
-// ITERATION 3
 
-function revealMystery() {}
+// ITERATION 3 // weapons rooms and suspects to each player
+
+function revealMystery (envelope) {} 
+
+    
 
