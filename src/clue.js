@@ -108,35 +108,48 @@ const roomsArray = [
     {name: "Guest House"},
     {name: "Patio"},
 ];
-let arrayOfArrays = [suspectsArray , roomsArray ,weaponsArray]
+
+
 
 // ITERATION 2
+let arrayOfArrays = [suspectsArray, roomsArray, weaponsArray];
+
 function selectRandom(arrayOfArrays) {
-    const randomSuspects = suspectsArray[Math.floor(Math.random() * suspectsArray.length)];
-    const randomWeapons = weaponsArray[ Math.floor(Math.random() * weaponsArray.length)];
-    const randomRooms = roomsArray[Math.floor(Math.random() * roomsArray.length)];
-    return [randomRooms,randomSuspects,randomWeapons];
-    
+    if (arrayOfArrays.length === 0) {
+        return undefined;
+    }
+
+    const randomSuspects = selectRandomFromArray(suspectsArray);
+    const randomWeapons = selectRandomFromArray(weaponsArray);
+    const randomRooms = selectRandomFromArray(roomsArray);
+
+    return [randomSuspects, randomWeapons, randomRooms];
 }
 
-const newArray = selectRandom(arrayOfArrays); 
-console.log(newArray); 
+function selectRandomFromArray(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
 
+const newArray = selectRandom(arrayOfArrays);
+console.log(newArray);
 
+// ITERATION 3
+function pickMystery() {
+    const mystery = {
+        suspect: selectRandomFromArray(suspectsArray),
+        weapon: selectRandomFromArray(weaponsArray),
+        room: selectRandomFromArray(roomsArray),
+    };
+    return mystery;
+}
 
+function revealMystery(envelope) {
+    const { suspect, weapon, room } = envelope;
+    return `${suspect.firstName} ${suspect.lastName} killed Mr. Boddy using the ${weapon.name} in the ${room.name}!`;
+}
 
-// function pickMystery() {
-  
-    function pickMystery() {}
-//        
+const randomMystery = pickMystery();
+const revelation = revealMystery(randomMystery);
+console.log(revelation);
+
     
-       
-
-
-
-// ITERATION 3 // weapons rooms and suspects to each player
-
-function revealMystery (envelope) {} 
-
-    
-
